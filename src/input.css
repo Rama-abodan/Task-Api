@@ -1,0 +1,11 @@
+@import "tailwindcss/base";
+
+
+@layer base {
+    :root {
+    --color-primary: #17181c;
+    --color-nav: #23262f;
+    
+}
+}
+

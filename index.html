@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Store Online</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-primary h-screen">
+    <!-- start header -->
+    <header class="">
+        <!-- start navbar -->
+        <nav class="sticky top-0 z-50 flex justify-between items-center px-20 bg-nav">
+            <!-- logo -->
+            <img src="./images/logo" alt="Logo" class="w-30 h-30">
+
+            <!-- icon menu -->
+            <button id="mobileMenuButton" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
+
+            </button>
+
+
+            <!-- category dropdown + search -->
+            <div
+                class="hidden md:flex items-center gap-0 bg-nav  bg-opacity-70 rounded-md overflow-hidden border border-white">
+
+
+                <!-- dropdown -->
+                <div class="relative ">
+                    <select
+                        class="appearance-none px-4 py-2 pr-8 bg-transparent text-white rounded-md cursor-pointer focus:outline-none">
+                        <option value="" class="bg-nav text-white">All Categories</option>
+                        <option value="electronics" class="bg-nav text-white">Men's Clothing</option>
+                        <option value="fashion" class="bg-nav text-white">Jewelery</option>
+                        <option value="home" class="bg-nav text-white">Electronics</option>
+                        <option value="beauty" class="bg-nav text-white">Women's Clothing</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- search -->
+                <div class="flex items-center border-l ">
+                    <input type="text" placeholder="Search for items..."
+                        class="px-4 py-2 bg-transparent text-white placeholder-white-200 outline-none w-64">
+                    <button class="px-4 py-2 text-white">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- menu items -->
+            <ul id="mobileMenu" class="hidden md:flex lg:flex items-center gap-10">
+                <!-- wishlist -->
+                <a href="#">
+                    <li class="flex items-center gap-2">
+                    <img src="./images/image1.png" alt="Wishlist Icon" class="w-6 h-6">
+                    <span class="text-white">WishList</span>
+                </li>
+                </a>
+                
+
+                <!-- cart -->
+                <a href="#productsContainer">
+                    <li class="flex items-center gap-2">
+                    <img src="./images/image2.png" alt="Cart Icon" class="w-6 h-6">
+                    <span class="text-white">Cart</span>
+                    </li>
+                </a>
+                
+
+                <!-- account -->
+                <a href="#">
+                    <li class="flex items-center gap-2">
+                    <img src="./images/image3.png" alt="Account Icon" class="w-6 h-6">
+                    <span class="text-white">Account</span>
+                </li>
+            </a>
+                
+
+                <li class="flex items-center gap-2">
+                    <a href="create.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- end navbar -->
+
+        <!-- start cards container -->
+        <section id="productsContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 p-20  h-full ">
+            <!-- card 1-->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl "
+                    >
+                    <svg width="20" height="18" viewBox="0 0 20 18"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+
+                <div class="border border-1 border-gray-400"></div>
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold pt-3 mb-4 leading-tight line-clamp-2">
+                    Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$109.95</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 2-->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold pt-4 mb-4 leading-tight line-clamp-2">
+                    Mens Casual Premium Slim Fit T-Shirts
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$22.30</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px]  object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold pt-4 mb-8 leading-tight line-clamp-2">
+                    Mens Cotton Jacket
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$55.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg" alt="Product Image"
+                    class="w-full h-[200px]  object-contain mb-4">
+
+                    <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-8 pt-4 leading-tight line-clamp-2">
+                    Mens Casual Slim Fit
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$15.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 5 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg" alt="Product Image"
+                    class="w-full h-[200px]  object-contain mb-4">
+
+                    <div class="border border-1 border-gray-400"></div>
+
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$695</p>
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 6 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-8 pt-4 leading-tight line-clamp-2">
+                    Solid Gold Petite Micropave
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$168</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 7 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-8 pt-4 leading-tight line-clamp-2">
+                    White Gold Plated Princess
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$9.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 8 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Pierced Owl Rose Gold Plated Stainless Steel Double
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$10.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 9 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    WD 2TB Elements Portable External Hard Drive - USB 3.0
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$64</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 10 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$109</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 11 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$109</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 12 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$114</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 13 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$599</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 14 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) Super Ultrawide Screen QLED
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$999.99</p>
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 15 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$56.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 16 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$29.95</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 17 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Rain Jacket Women Windbreaker Striped Climbing Raincoats
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$39.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 18 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    MBJ Women's Solid Short Sleeve Boat Neck 
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$ 9.85</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 19 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    Opna Women's Short Sleeve Moisture
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$7.95</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+            <!-- card 20 -->
+            <div class="bg-white rounded-lg shadow-md p-6 w-72 relative min-h-[400px]">
+                <!-- أيقونة القلب -->
+                <button class="absolute top-3 right-3 p-1 bg-gray-200 rounded-full shadow-xl">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="hover:scale-105">
+                        <path
+                            d="M16.8407 1.66131C14.3825 0.15346 12.237 0.761104 10.9481 1.72901C10.4197 2.12588 10.1554 2.32431 9.99998 2.32431C9.84452 2.32431 9.58029 2.12588 9.05182 1.72901C7.76296 0.761104 5.61747 0.15346 3.1593 1.66131C-0.0667908 3.64019 -0.796776 10.1686 6.64455 15.6764C8.06189 16.7255 8.77056 17.25 9.99998 17.25C11.2294 17.25 11.9381 16.7255 13.3554 15.6764C20.7967 10.1686 20.0667 3.64019 16.8407 1.66131Z"
+                            stroke="#525E6F" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                </button>
+
+                <!-- صورة المنتج -->
+                <img src="https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg" alt="Product Image"
+                    class="w-full h-[200px] object-contain mb-4">
+
+                <div class="border border-1 border-gray-400"></div>
+
+                <!-- اسم المنتج -->
+                <h2 class="text-left text-base font-semibold mb-4 pt-4 leading-tight line-clamp-2">
+                    DANVOUY Womens T Shirt Casual Cotton Short
+                </h2>
+
+                <!-- السعر -->
+                <p class="text-green-600 font-bold bg-green-100 px-2 py-1 rounded mb-4 w-fit">$12.99</p>
+
+
+
+                <!-- زر الإضافة للسلة -->
+                <button
+                    class="w-full flex justify-around active:scale-95 active:bg-emerald-800 bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-md transition-colors duration-200">
+                    Add to Cart
+                    <img src="./images/image2.png" alt="" class="w-6 h-6">
+                </button>
+            </div>
+
+        </section>
+        <!-- end cards container -->
+
+    </header>
+    <!-- end header -->
+
+    <!-- start footer -->
+    <footer class="bg-nav text-white py-12 px-4 md:px-20 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <!-- Section 1: Store Information -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 border-b border-emerald-500 pb-2">Store Online</h3>
+                <p class="text-gray-300">Your online store for all your shopping needs, with high quality and
+                    competitive prices.</p>
+            </div>
+
+            <!-- Section 2: Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 border-b border-emerald-500 pb-2">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-emerald-400 transition">Home</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-emerald-400 transition">New Products</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-emerald-400 transition">Special Offers</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 3: Customer Service -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 border-b border-emerald-500 pb-2">Customer Service</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-300 hover:text-emerald-400 transition">Return Policy</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-emerald-400 transition">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Section 4: Contact Info -->
+            <div>
+                <h3 class="text-xl font-bold mb-4 border-b border-emerald-500 pb-2">Contact Us</h3>
+                <p class="text-gray-300 mb-4">Email: info@storeonline.com</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 pt-8 text-center">
+            <p class="text-gray-400">&copy; 2025 Store Online. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- end footer -->
+    <script src="./index.js"></script>
+
+    <div id="loadingIndicator" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-xl">
+        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-emerald-500 mx-auto"></div>
+        <p class="mt-4 text-center">Loading...</p>
+    </div>
+</div>
+
+
+</body>
+
+</html>
